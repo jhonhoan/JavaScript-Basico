@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paises</title>
+</head>
+<body>
+    <h1>Departamento de monitoramento </h1>
+    De qual País você veio? <input type="text" name="" id="pais">
+    <input type="button" value="verificar" id="b" >
+    <div id="res"></div>
+
+    <script>
+        var b = document.getElementById('b')
+        b.addEventListener('click', clicar)
+        var res = document.getElementById('res')
+       
+
+        function clicar()
+        {
+            
+            var pais = document.getElementById('pais').value
+            res.innerHTML = `Você veio do ${pais}</br>` 
+
+            if (pais == 'Brasil')
+            {
+                res.innerHTML += 'Você é brasileiro!'
+            }else
+            {
+                res.innerHTML += 'você é estrangeiro!'
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

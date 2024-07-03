@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passo no DOM</title>
+    <style>
+       body{
+        background-color: rgb(30, 109, 194);
+        color: white;
+        font: normal 15pt arial;
+
+       }
+    </style>
+</head>
+<body>
+    <h1>Iniciando Estudos <strong>DOM</strong></h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong></p>
+    <p><strong>DOM</strong></p>
+
+    <div >Click em mim</div><br>
+
+    <p class = 'usa'>Eu estou Aprendendo inglês </p>
+    <p>Objetivo é trabalhar como programador nos <strong>EUA</strong></p>
+    
+    <script>
+    
+       var p = document.getElementsByTagName('p')[2]
+       var p2 = document.getElementsByTagName('strong')[3]
+       var str =  document.getElementsByTagName('strong')[0]
+       document.querySelector('p.usa').style.color = 'blue'
+
+      p2.style.color = 'blue'
+      str.style.color = 'red'
+
+       document.write(`O ${p.innerHTML} significa: Document Object Model`)
+        
+    </script>
+</body>
+</html>
