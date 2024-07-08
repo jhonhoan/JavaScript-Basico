@@ -7,17 +7,33 @@ function clicar()
 
     if(inicio.value.length == 0 || fim.value.length == 0 || passos.value.length == 0)
     {
-        alert('[ERRO] Faltam dados')
+        res.innerHTML = 'Impossivel contar'
     }else{
         res.innerHTML = 'Contando'
         var i = Number(inicio.value)
         var f = Number(fim.value)
         var p = Number(passos.value)
-
-        for(var c = i; c <= f; c += p)
+        if(p <= 0)
         {
-            res.innerHTML += `${c} `
+            alert('[ERRO] Considerando passos 1')
+            p = 1
         }
+
+        if (i < f)
+        {
+            //contagem crescente
+            for(var c = i; c <= f; c += p)
+            {
+                res.innerHTML += `${c} `
+            }
+         }else
+         {
+            //contagem regressiva
+            for(var c = i; c >= f; c -= p)
+            {
+                res.innerHTML += `${c} `
+            }
+         }
 
     }
 
