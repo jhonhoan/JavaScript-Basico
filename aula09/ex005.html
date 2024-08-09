@@ -17,24 +17,42 @@
     <h1>Iniciando Estudos <strong>DOM</strong></h1>
     <p>Aqui vai o resultado</p>
     <p>Aprendendo a usar o <strong>DOM</strong></p>
-    <p><strong>DOM</strong></p>
 
-    <div >Click em mim</div><br>
+    <div >
+        <p>Click em mim</p>
+    </div>
+    <br>
 
     <p class = 'usa'>Eu estou Aprendendo inglês </p>
     <p>Objetivo é trabalhar como programador nos <strong>EUA</strong></p>
     
     <script>
     
-       var p = document.getElementsByTagName('p')[2]
-       var p2 = document.getElementsByTagName('strong')[3]
-       var str =  document.getElementsByTagName('strong')[0]
-       document.querySelector('p.usa').style.color = 'blue'
+       const p = document.getElementsByTagName("p")[1]
+       const p1 = document.getElementsByClassName("usa")[0]
+       const corpo = document.body
 
-      p2.style.color = 'blue'
-      str.style.color = 'red'
+       p.style.color = "purple"
+       p1.style.color = "blue"
+       corpo.style.background = "orange"
 
-       document.write(`O ${p.innerHTML} significa: Document Object Model`)
+        const a = document.getElementsByTagName("div")[0]
+        const par = document.getElementsByTagName("p")[2]
+
+        par.addEventListener('click', clicar)
+        par.addEventListener('mouseout', mousein)
+
+        function clicar()
+        {
+            a.style.background = "blue"
+        }
+
+        function mousein()
+        {
+            a.style.background = "red"
+        }
+        
+       document.write("Está escrito assim: " + p.innerHTML)
         
     </script>
 </body>
