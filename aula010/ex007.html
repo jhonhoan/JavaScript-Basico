@@ -7,7 +7,7 @@
     <style>
         body{
 
-            font: normal 18pt arial;
+            font: normal 14pt arial;
 
         }
         input
@@ -23,36 +23,40 @@
             border: none;
             border-radius: 5px 5px 5px 5px;
             margin-left: 60px;
+            height: 25px;
         }
         div{margin-top: 40px;}
     </style>
 </head>
 <body>
-    <h1>Somando Valores</h1>
-    <input type="number" name="text1" id="text1"> +
-    <input type="number" name="text2" id="text2"><br>
-    <input id="botao" type="button" value="Somar" onclick="somar()">
-    <div id="res"> Resultado</div>
+   <h1>Somando valores</h1>
+   <input type="number" name="" id="n1">+
+   <input type="number" name="" id="n2">
+   <input type="button" value="somar" id="botao" onclick="clicar()">
+   <div id="div">Resultado: </div>
 
-    <script>
-
-        function somar()
-        {
-
-            var tn1 = document.getElementById('text1')
-            var tn2 = document.querySelector('input#text2')
-            var res = document.getElementById('res')
-            var n1 = Number(tn1.value)
-            var n2 = Number(tn2.value)
-            var s = n1 + n2
-
-            res.innerHTML = `A soma entre ${n1} e ${n2} é ${s}`
-
-        }
+   <script>
 
 
 
-    </script>
+    
+
+    function clicar()
+    {
+        const nn1 = document.getElementById('n1')
+        const nn2 = document.getElementById("n2")
+        const n1 = Number(nn1.value)
+        const n2 = Number(nn2.value)
+        const s = n1 + n2
+        let r = document.getElementById("div")
+        
+        r.innerHTML = `Resultado: entre ${n1} + ${n2} é: ${s}`
+      
+
+    }
+
+   </script>
+
 
 </body>
 </html>
