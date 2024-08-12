@@ -98,6 +98,7 @@ function clicar()
                 }
         }
 
+        res.style.textAlign = 'center'
         res.innerHTML = `Detectamos ${gen} com ${idade} anos`
         res.appendChild(img)
     }
