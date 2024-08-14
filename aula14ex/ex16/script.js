@@ -1,33 +1,44 @@
-function clicar() {
-    var inicio = document.getElementById('inicio');
-    var fim = document.getElementById('fim');
-    var passos = document.getElementById('passos');
-    var res = document.getElementById('res');
+function clicar()
+{
+    let inicio = document.getElementById("inicio")
+    let fim = document.getElementById("fim")
+    let passos = document.getElementById("passos")
+    let res = document.getElementById("res")
 
-    if (inicio.value.length == 0 || fim.value.length == 0 || passos.value.length == 0) {
-        res.innerHTML = "Não é possível contar! Por favor, preencha todos os campos.";
-    } else {
-        res.innerHTML = "Contando: <br>";
+    if (passos.value.length == 0 || inicio.value.length == 0 || fim.value.length == 0)
+    {
+       res.innerHTML = "Impossivel contar "
 
-        var i = Number(inicio.value);
-        var f = Number(fim.value);
-        var p = Number(passos.value);
+    }else
+    {
 
-        if (p <= 0) {
-            alert("Passo inválido! Considerando passo 1.");
-            p = 1;
-        }
+        
 
-        if (i < f) {
-            // Contagem crescente
-            for (var c = i; c <= f; c += p) {
-                res.innerHTML += `${c} `;
+        res.innerHTML = "Contando: "
+        let i = Number(inicio.value)
+        let f = Number(fim.value)
+        let p = Number(passos.value)
+
+        if (p <= 0)
+            {
+                res.innerHTML = "Passos invalidos considerando passo 1"
+                p = 1
             }
-        } else {
-            // Contagem decrescente
-            for (var c = i; c >= f; c -= p) {
-                res.innerHTML += `${c} `;
+
+
+        if (i < f)
+        {
+            for(let ind = i; ind <= f; ind += p)
+                {
+                    res.innerHTML += `${ind} `
+                }
+        }else if (i > f)
+        {
+            for (let c = i; c >= f; c -= p)
+            {
+                res.innerHTML += `${c} `
             }
         }
+       
     }
 }
