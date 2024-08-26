@@ -1,30 +1,45 @@
 
-let num = []
+let num = document.getElementById('num')
+let area = document.getElementById('area')
+let res = document.getElementById("res")
+let valores = []
 
+function isnumber(n)
+{
+    if ( Number(n) <= 0 || Number(n) > 100)
+    {
+        return false
+    }else
+    {
+        return true
+    }
+}
+
+function lista(n, l)
+{
+    if (l.indexOf(Number(n)) != -1)
+    {
+        return true
+    }else
+    {
+        return false
+    }
+}
 
 function adicionar()
 {
-    let n = Number(document.getElementById('num').value)
-    let area = document.getElementById('area')
-    
-    
     
 
-    if (n <= 0 || n > 100 )
+    if (isnumber(num.value) && !lista(num.value, valores) )
     {
-        alert('Adicione um valor de 1 a 100!')
+        alert('tudo ok')
+
+        
     }else
     {
 
+        alert('Adicione um valor de 1 a 100!')
         
-       num += n
-
-            let item = document.createElement('option')
-            item.text += `Valor ${n} adicionado, array: ${num.length}`
-            area.appendChild(item)
-
-       
-
        
 
 
@@ -34,18 +49,20 @@ function adicionar()
 
 
 
+
+
 function fim()
 {
 
-    if (num == 0)
+    if (valores == 0)
     {
         alert("Digite um numero")
     }else
     {
-        let res = document.getElementById("res")
+        
 
-        res.innerHTML = `Ao todo temos ${num.length} numeros cadastrados. <br> `
-        res.innerHTML += `O maior valor entre eles é ${num.} `
+        res.innerHTML = `Ao todo temos ${valores.length} numeros cadastrados. <br> `
+     
     }
 
     
